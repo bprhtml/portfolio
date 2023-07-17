@@ -1,0 +1,173 @@
+/* 
+#0E0B16 - background
+#A239CA - trim
+#4717F6 - buttons etc
+#E7DFDD - font colour
+*/
+
+* {
+    background-color: #0E0B16;
+    color: #E7DFDD;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 7vh;
+    width: 100vw;
+    background-color: black;
+    border-width: 0.5vh;
+    border-style: dashed;
+    border-image: 
+        linear-gradient(
+            to left,
+            #A239CA,
+            #4717f6
+        ) 0 0 100 0;
+}
+.header-right {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.header>div>button {
+    border: none;
+    margin-inline: 2vw;
+    cursor: pointer;
+    padding: 0;
+    height: 4vh;
+}
+
+.logo-header {
+    padding-inline: 4vw;
+    cursor: pointer;
+}
+
+
+
+/* Dropdown menu */
+
+#container {
+position: relative;
+color: #E7DFDD; 
+}
+
+#container:after {
+content: "";
+display: block;
+clear: both;
+height: 0;
+}
+
+#menu {
+position: relative;
+float: left;
+width: 100%;
+border-radius: 0.5vw;
+padding: 0 4vh;
+}
+
+#menu, #menu ul {
+list-style: none;
+}
+button {
+    border: none;
+}
+
+#menu > li {
+float: left;
+position: relative;
+perspective: 1000px;
+}
+
+#menu button {
+display: block;
+position: relative;
+z-index: 10;
+padding: 2vh;
+text-decoration: none;
+color: #E7DFDD;
+line-height: 1;
+font-weight: 600;
+letter-spacing: -.05em;
+background: transparent;    
+transition: all .25s ease-in-out;
+
+}
+
+#menu > li:hover > button {
+background: #E7DFDD;
+color: #0E0B16;
+text-shadow: none;
+}
+
+#menu li ul  {
+position: absolute;
+right: 0%;
+z-index: 1;
+width: 20vw;
+padding: 0;
+opacity: 0;
+visibility: hidden;
+border-bottom-left-radius: 0.5vw;
+border-bottom-right-radius: 0.5vw;
+background: transparent;
+overflow: hidden;
+transform-origin: 0% 0%;
+}
+
+
+#menu li:hover ul {
+padding-block: 0.5vh;
+background: linear-gradient(#4717f6, #A239CA);
+opacity: 1;
+visibility: visible;
+animation-name: swingdown;
+animation-duration: 1s;
+animation-timing-function: ease;
+
+}
+
+@keyframes swingdown {
+0% {
+  opacity: .99999;
+  transform: rotateX(90deg);
+}
+
+30% {     
+  transform: rotateX(-20deg) rotateY(5deg);
+  animation-timing-function: ease-in-out;
+}
+
+65% {
+  transform: rotateX(20deg) rotateY(-3deg);
+  animation-timing-function: ease-in-out;
+}
+
+100% {
+  transform: rotateX(0);
+  animation-timing-function: ease-in-out;
+}
+}
+
+#menu li li button {
+padding: 2vw;
+font-weight: 400;
+color: #ddd;
+width: 20vw;
+text-shadow: none;
+border-top: dotted 1px transparent;
+border-bottom: dotted 1px transparent;
+transition: all .15s linear;
+}
+
+#menu li li button:hover {
+color: #E7DFDD;
+border: dotted 1.4vh rgba(255, 255, 255, .15);
+background: #4717f6;
+}
+
