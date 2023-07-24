@@ -5,6 +5,7 @@
 #E7DFDD - font colour
 */
 
+/* Header */
 * {
     background-color: #0E0B16;
     color: #E7DFDD;
@@ -19,7 +20,7 @@
     align-items: center;
     height: 7vh;
     width: 100vw;
-    background-color: black;
+    background-color: #0E0B16;
     border-width: 0.5vh;
     border-style: dashed;
     border-image: 
@@ -47,6 +48,75 @@
     cursor: pointer;
 }
 
+/* Body */
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Contact */
+.flex-container>form,
+.flex-container>form>div {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2vh;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+.all-form-inputs>input {
+  margin: 2vh;
+  border: 2px solid #4717f6;
+  border-radius: 1vh;
+  width: 20vw;
+  height: 5vh;
+}
+
+.submit-form {
+  border: 0.5vh solid #A239CA;
+  margin-top: 2vh;
+  border-radius: 1vh;
+  width: 20vw;
+  box-shadow: 0 0.1vh #999;
+  height: 5vh;
+}
+.submit-form:hover {
+  background-color: #2E2B36;
+}
+.submit-form:active {
+  transform: translateY(0.07vh);
+  box-shadow: 0 0.03vh #666;
+}
+
+.form-title {
+  text-align: center;
+  margin-top: 8vh;
+}
+
+.form-desc,
+.form-warning {
+  width: 60vw;
+  margin-top: 4vh;
+  text-align: center;
+}
+
+/* About me */
+
+.about-me-bottom,
+.about-me-middle,
+.about-me-top {
+  animation: fadeIn 1s;
+  font-size: 4vh;
+  height: 30vh;
+  overflow: hidden;
+}
 
 
 /* Dropdown menu */
@@ -74,9 +144,6 @@ padding: 0 4vh;
 #menu, #menu ul {
 list-style: none;
 }
-button {
-    border: none;
-}
 
 #menu > li {
 float: left;
@@ -96,7 +163,7 @@ font-weight: 600;
 letter-spacing: -.05em;
 background: transparent;    
 transition: all .25s ease-in-out;
-
+border: none;
 }
 
 #menu > li:hover > button {
@@ -132,28 +199,6 @@ animation-timing-function: ease;
 
 }
 
-@keyframes swingdown {
-0% {
-  opacity: .99999;
-  transform: rotateX(90deg);
-}
-
-30% {     
-  transform: rotateX(-20deg) rotateY(5deg);
-  animation-timing-function: ease-in-out;
-}
-
-65% {
-  transform: rotateX(20deg) rotateY(-3deg);
-  animation-timing-function: ease-in-out;
-}
-
-100% {
-  transform: rotateX(0);
-  animation-timing-function: ease-in-out;
-}
-}
-
 #menu li li button {
 padding: 2vw;
 font-weight: 400;
@@ -171,3 +216,35 @@ border: dotted 1.4vh rgba(255, 255, 255, .15);
 background: #4717f6;
 }
 
+@keyframes swingdown {
+  0% {
+    opacity: .99999;
+    transform: rotateX(90deg);
+  }
+  
+  30% {     
+    transform: rotateX(-20deg) rotateY(5deg);
+    animation-timing-function: ease-in-out;
+  }
+  
+  65% {
+    transform: rotateX(20deg) rotateY(-3deg);
+    animation-timing-function: ease-in-out;
+  }
+  
+  100% {
+    transform: rotateX(0);
+    animation-timing-function: ease-in-out;
+  }
+  }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    width: 0
+  }
+  100% {
+    opacity: 1;
+    width: 100%;
+  }
+}
