@@ -9,7 +9,7 @@ export function loadAboutPage(container) {
     const aboutMeTitle = document.createElement('h1');
     aboutMeTitle.textContent = 'About Me';
     aboutMeTitle.style.marginTop = '4vh';
-    aboutMeTitle.style.fontSize = '7vh';
+    aboutMeTitle.style.fontSize = '3.5vw';
     aboutMeContainer.appendChild(aboutMeTitle);
 
     const aboutMeTopHalfContainer = document.createElement('div')
@@ -25,7 +25,7 @@ export function loadAboutPage(container) {
     aboutMeFirstPara.style.width = '55vw';
 
     const photoOfMe = document.createElement('img');
-    photoOfMe.src = 'https://media.licdn.com/dms/image/D4E03AQET5GEWP7EPOA/profile-displayphoto-shrink_800_800/0/1689058766782?e=1695254400&v=beta&t=tvCFFv_14jzJGup7_MJuqcromNJ-QhdA__sgxOLl90g';
+    photoOfMe.src = '../images and fonts/me and gary.jpeg'
     photoOfMe.style.width = '15vw';
     photoOfMe.style.height = '15vw';
     photoOfMe.style.marginLeft = '4vw';
@@ -86,17 +86,15 @@ export function loadAboutPage(container) {
     aboutMeThirdPara.textContent = "In addition to programming, I have many other skills and hobbies: one of which being drumming, which I've been studying for over 20 years."
     aboutMeThirdPara.style.width = '55vw';
 
+    const drummingPhotoDiv = document.createElement('a');
+    drummingPhotoDiv.href = 'https://youtu.be/jzgb8XfIKjI';
+
     const drummingPhoto = document.createElement('img');
     drummingPhoto.src =  '../images and fonts/me-drumming.png'
     drummingPhoto.style.width = '15vw';
     drummingPhoto.style.height = '15vw';
     drummingPhoto.style.marginLeft = '4vw';
-    drummingPhoto.alt = 'Portrait photo of myself, originating from my LinkedIn page.'
-
-    const drumLink = document.createElement('a');
-    drumLink.src = 'https://youtu.be/jzgb8XfIKjI'
-    drumLink.textContent = 'Youtube'
-    drummingPhoto.appendChild(drumLink);
+    drummingPhoto.alt = 'Myself drumming in a YouTube video from my channel.';
 
 
     const finalDivision = document.createElement('div');
@@ -108,8 +106,9 @@ export function loadAboutPage(container) {
 
     setTimeout(() => {
         aboutMeContainer.appendChild(aboutMeThirdHalfContainer);
-        aboutMeThirdHalfContainer.appendChild(aboutMeThirdPara);    
-        aboutMeThirdHalfContainer.appendChild(drummingPhoto);   
+        aboutMeThirdHalfContainer.appendChild(aboutMeThirdPara);  
+        aboutMeThirdHalfContainer.appendChild(drummingPhotoDiv)  
+        drummingPhotoDiv.appendChild(drummingPhoto);   
         aboutMeContainer.appendChild(finalDivision); 
-    }, 3000);
+    }, 3600);
 }

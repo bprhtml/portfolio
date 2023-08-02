@@ -4,6 +4,8 @@ export function loadContactForm(container) {
     const formTitle = document.createElement('h1');
     formTitle.classList.add('form-title');
     formTitle.innerHTML = 'Contact Us';
+    formTitle.style.marginTop = '4vh';
+    formTitle.style.fontSize = '3.5vw';
     container.appendChild(formTitle);
 
     const formDescription = document.createElement('h4');
